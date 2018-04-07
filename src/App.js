@@ -27,7 +27,7 @@ class App extends Component {
         },
         {
           id: 1,
-          name: 'mucha voz y pocos datos',
+          name: 'Mucha voz y pocos datos',
           price: 8,
           features: [
             {
@@ -46,7 +46,7 @@ class App extends Component {
         },
         {
           id: 2,
-          name: 'poca voz y muchos datos',
+          name: 'Poca voz y muchos datos',
           price: 12,
           features: [
             {
@@ -65,8 +65,9 @@ class App extends Component {
         },
         {
           id: 3,
-          name: 'damelo tó',
+          name: 'Damelo tó!!!',
           price: 20,
+          special: true,
           features: [
             {
               id: 5,
@@ -122,7 +123,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {`tarifa:${this.state.tariffSelected}`}
         {this.renderView()}
       </div>
     );
