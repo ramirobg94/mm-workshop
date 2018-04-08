@@ -6,18 +6,19 @@ import Cart from './components/Cart/Cart';
 class Funnel extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            isCartOpen: true
+        }
     }
 
     render(){
 
+            console.log(this.props)
         return(
             <div>
-                <Form />
-                {true || <Cart /> }
-                <div 
-                    onClick={()=>this.props.changeView()}>
-                    To ThankYou
-                </div>
+                <Form personalInfo={this.props.personalInfo} changeInfo={this.props.changeInfo} onSubmit={()=>this.props.changeView()}/>
+                {this.state.isCartOpen && <Cart tariff={this.props.tariff} /> }
+               
             </div>
         )
     }

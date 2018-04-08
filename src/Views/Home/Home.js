@@ -1,5 +1,9 @@
 import React from 'react'
 
+import Name from '../components/Name';
+import Price from '../components/Price';
+import Features from '../components/Features';
+
 const Home = ({changeView, tariffs, selectTariff}) => 
     <div>
         <Cards tariffs={tariffs} selectTariff={selectTariff} />
@@ -21,22 +25,6 @@ const Card = ({tariff: { special, price, features, name, id}, selectTariff}) =>
         <Price price={price} />
         <Btn selectTariff={()=>selectTariff(id)}/>
     </div>
-
-const Name = ({name}) =>  <div><h3>{name}</h3></div>
-const Features = ({ features }) => 
-    <div className="Price">
-        {features.map((feature) => 
-            <Feature feature={feature} key={feature.id} />
-        )}
-    </div>
-
-const Feature = ({feature: {type, value, units}}) => 
-    <div className="Feature">
-        <p>{type}</p>
-        <p className="value">{value}<small>{units}</small></p>
-    </div>
-
-const Price = ({price}) => <div className="Price"><h2>{price}<span>€</span></h2><small>IVA incluido</small></div>
 
 const Btn = ({selectTariff}) => <div onClick={()=>selectTariff()} className="Btn"><h2>La quiero</h2></div>
         

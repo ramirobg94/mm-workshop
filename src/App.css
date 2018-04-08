@@ -115,6 +115,8 @@ small{
   border-radius: 8px;
   background: #fff;
   color: #333;
+  display: flex;
+    flex-direction: column;
 }
 
 #Cart{
@@ -129,4 +131,15 @@ small{
   position: fixed;
   right: 0;
   top: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-around;
+  -ms-flex-align: unset;
+  align-items: unset;
+  color: #333;
 }

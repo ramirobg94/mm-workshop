@@ -116,6 +116,10 @@ class App extends Component {
     this.setState({tariffSelected: id, currentView: 'funnel'})
   }
 
+  changeInfo(name, value){
+    let newPersonalInfo = {info: {...this.state.personalInfo.info, [name]: value}, errors: [...this.state.personalInfo.errors]}
+    this.setState({personalInfo: newPersonalInfo})
+  }
 
   renderView(){
     switch(this.state.currentView){
@@ -126,7 +130,7 @@ class App extends Component {
           />
         break
       case 'funnel':
-        return <Funnel changeView={()=>this.changeView('thankYou')}/>
+        return <Funnel changeView={()=>this.changeView('thankYou')} personalInfo={this.state.personalInfo} changeInfo={(name, value) => this.changeInfo(name, value)} tariff={this.state.tariffs.filter(tariff => tariff.id = this.state.tariffSelected)[0]}/>
         break
       case 'thankYou':
         return <ThankYou changeView={()=>this.changeView('home')}/>
