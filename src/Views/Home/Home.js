@@ -4,7 +4,7 @@ import logo from '../../../src/DHub_logo.png'
 const Home = ({changeView, tariffs, selectTariff}) => 
     <div>
         <Header/>
-        <Cards tariffs={tariffs} />
+        <Cards tariffs={tariffs} selectTariff={selectTariff} />
     </div>
 
 export default Home
@@ -17,19 +17,19 @@ const Header = () => (
   </header>
 )
 
-const Cards = ({tariffs}) => 
+const Cards = ({tariffs, selectTariff}) => 
     <div className="Cards">
         {tariffs && tariffs.map(tariff => 
-            <Card key={tariff.id} tariff={tariff}/>)
+            <Card key={tariff.id} tariff={tariff} selectTariff={selectTariff}/>)
         }
     </div>
 
-const Card = ({tariff: { special, price, features, name}}) => 
+const Card = ({tariff: { special, price, features, name, id}, selectTariff}) => 
     <div className={`Card ${special ? 'special' : ''}`}>
         <Name name={name}/>
         <Features features={features} />
         <Price price={price} />
-        <Btn />
+        <Btn selectTariff={()=>selectTariff(id)}/>
     </div>
 
 const Name = ({name}) =>  <div><h3>{name}</h3></div>
@@ -48,5 +48,5 @@ const Feature = ({feature: {type, value, units}}) =>
 
 const Price = ({price}) => <div className="Price"><h2>{price}<span>€</span></h2><small>IVA incluido</small></div>
 
-const Btn = () => <div className="Btn"><h2>La quiero</h2></div>
+const Btn = ({selectTariff}) => <div onClick={()=>selectTariff()} className="Btn"><h2>La quiero</h2></div>
         

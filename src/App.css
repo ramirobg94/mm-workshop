@@ -8,9 +8,9 @@
 
 .App-header {
   background-color: #fff;
-  height: 170px;
+  height: 200px;
   color: white;
-  background: url(/static/media/girl.5e7a6c44.jpg) #fff;
+  background: url(./girl.jpg) #fff;
   background-size: cover;
   background-position: center;
 }
@@ -70,6 +70,10 @@
 
 .Btn:hover{
   background: #fff;
+  color: #000;
+}
+.special>.Btn:hover{
+  background: #ffe200;
   color: #000;
 }
 

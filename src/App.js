@@ -80,6 +80,12 @@ class App extends Component {
               type: 'datos',
               value: 'ilimitados',
               units: ''
+            },
+            {
+              id: 7,
+              type: 'sms',
+              value: 'ilimitados',
+              units: ''
             }
           ]
         }
@@ -95,7 +101,7 @@ class App extends Component {
   }
 
   selectTariff(id){
-    this.setState({tariffSelected: id})
+    this.setState({tariffSelected: id, currentView: 'funnel'})
   }
 
 
@@ -103,7 +109,6 @@ class App extends Component {
     switch(this.state.currentView){
       case 'home':
         return <Home
-            changeView={()=>this.changeView('funnel')} 
             tariffs={this.state.tariffs}
             selectTariff={(id)=>this.selectTariff(id)}
           />
