@@ -1,21 +1,11 @@
 import React from 'react'
-import logo from '../../../src/DHub_logo.png'
 
 const Home = ({changeView, tariffs, selectTariff}) => 
     <div>
-        <Header/>
         <Cards tariffs={tariffs} selectTariff={selectTariff} />
     </div>
 
 export default Home
-
-const Header = () => (
-  <header className="App-header">
-    <div className="Header-over">
-        <img src={logo} className="App-logo" alt="logo" />
-    </div>
-  </header>
-)
 
 const Cards = ({tariffs, selectTariff}) => 
     <div className="Cards">

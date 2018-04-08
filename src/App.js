@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './DHub_logo.png'
 import './App.css';
 
 import Home from './Views/Home/Home'
+import Funnel from './Views/Funnel/Funnel'
 
 class App extends Component {
 
@@ -89,7 +90,18 @@ class App extends Component {
             }
           ]
         }
-      ]
+      ],
+      personalInfo: {
+        info: {
+          name: '',
+          surname: '',
+          birthdate: '',
+          phone: '',
+          company: '',
+          mail: ''
+        },
+        errors: []
+      }
     }
 
     this.renderView = this.renderView.bind(this)
@@ -128,14 +140,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+       <Header/>
         {this.renderView()}
       </div>
     );
   }
 }
 
-
-const Funnel = ({changeView}) => <div><p>Funnel</p><div onClick={()=>changeView()}>To ThankYou</div></div>
 const ThankYou = ({changeView}) => <div><p>ThankYou</p><div onClick={()=>changeView()}>To Home</div></div>
 
 export default App;
+
+
+const Header = () => (
+  <header className="App-header">
+    <div className="Header-over">
+        <img src={logo} className="App-logo" alt="logo" />
+    </div>
+  </header>
+)

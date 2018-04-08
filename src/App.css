@@ -47,6 +47,7 @@
   flex-direction: column;
   justify-content: space-between;
     align-items: unset;
+    color: #333;
 }
 
 .Price > h2{
@@ -103,4 +104,29 @@
 
 small{
   font-size: 12px;
+}
+
+#Form{
+  min-height: 500px;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 0px 0px 5px 0px #333;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+}
+
+#Cart{
+  height: 300px;
+  width: 200px;
+  margin: auto;
+  margin-top: 50px;
+  -webkit-box-shadow: 0px 0px 5px 0px #333;
+  box-shadow: 0px 0px 5px 0px #333;
+  border-radius: 8px 0px 0px 8px;
+  background: #fff;
+  position: fixed;
+  right: 0;
+  top: 0;
 }
