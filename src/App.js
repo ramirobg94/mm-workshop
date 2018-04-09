@@ -130,7 +130,7 @@ class App extends Component {
           />
         break
       case 'funnel':
-        return <Funnel changeView={()=>this.changeView('thankYou')} personalInfo={this.state.personalInfo} changeInfo={(name, value) => this.changeInfo(name, value)} tariff={this.state.tariffs.filter(tariff => tariff.id = this.state.tariffSelected)[0]}/>
+        return <Funnel changeView={()=>this.changeView('thankYou')} personalInfo={this.state.personalInfo} changeInfo={(name, value) => this.changeInfo(name, value)} tariff={this.state.tariffs.filter(tariff => tariff.id === this.state.tariffSelected)[0]}/>
         break
       case 'thankYou':
         return <ThankYou changeView={()=>this.changeView('home')}/>
